@@ -1,7 +1,7 @@
 # Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
 # More GitHub Actions for Azure: https://github.com/Azure/actions
 
-name: Build and deploy ASP.Net Core app to Azure Web App - MyStudentWebApplication
+name: Build and deploy ASP.Net Core app to Azure Web App - myStudentWebApplication
 
 on:
   push:
@@ -21,7 +21,7 @@ jobs:
       - name: Set up .NET Core
         uses: actions/setup-dotnet@v4
         with:
-          dotnet-version: '9.x'
+          dotnet-version: '8.x'
 
       - name: Build with dotnet
         run: dotnet build --configuration Release
@@ -54,15 +54,15 @@ jobs:
       - name: Login to Azure
         uses: azure/login@v2
         with:
-          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_5BFF896F351B43C6AB6F75579E414CB2 }}
-          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_826157A0E396439883D2EC077BCE5F85 }}
-          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_95932AD1935349D597B02CF158FAFC53 }}
+          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_0BAD288248D4480F8AFB22D50FBA6607 }}
+          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_5C2CD96551F74E87B43C56FE5785CD13 }}
+          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_18F3D61E4EF242D8AC7836DDF39F7291 }}
 
       - name: Deploy to Azure Web App
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v3
         with:
-          app-name: 'MyStudentWebApplication'
+          app-name: 'myStudentWebApplication'
           slot-name: 'Production'
           package: .
           
